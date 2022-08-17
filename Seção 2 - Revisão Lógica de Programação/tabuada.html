@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Tabuada</h1>
+    <input type="number" id="display" placeholder="Digite um número">
+    <button type="button" id="show">Mostrar tabuada</button>
+    <button type="button" id="clear">Limpar tabuada</button>
+    <div id="output"></div>
+
+    <script>
+        const display = document.querySelector('#display')
+        const show = document.querySelector('#show')
+        const clear = document.querySelector('#clear')
+        const output = document.querySelector('#output')
+
+        const showCalc = () => {
+            const value = Number(display.value)
+            let msg = ''
+            for (let i = 1; i <= 10000; i++) {
+                const result = value * i
+                msg += `${value} x ${i} = ${result}<br>`
+            }
+            output.innerHTML = msg
+        }
+
+        show.addEventListener('click', showCalc)
+        clear.addEventListener('click', () => output.innerHTML = '')
+    </script>
+
+</body>
+
+</html>
