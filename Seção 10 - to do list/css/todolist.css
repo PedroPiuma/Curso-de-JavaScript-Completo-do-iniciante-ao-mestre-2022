@@ -128,8 +128,12 @@ input[type="submit"]:hover {
   color: #726a95;
 }
 
-.fa-check.displayNone {
+.button-check .fa-check.displayNone {
   display: none;
+}
+
+.button-check .fa-check.displayBlock {
+  display: block;
 }
 
 .task-name {

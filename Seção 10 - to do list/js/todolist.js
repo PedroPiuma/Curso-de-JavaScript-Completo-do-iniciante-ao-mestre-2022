@@ -27,7 +27,8 @@ window.onload = () => {
         saveInLocalStorage()
     })
     const addEventCheck = () => btnChk.forEach(el => el.addEventListener('click', element => {
-        element.target.style.background = !element.target.style.background ? 'green' : ''
+        // Dibrando a realidade, não sei como funcionou
+        element.target.querySelector('.displayNone') ? element.target.querySelector('.displayNone').classList.remove('displayNone') : element.target.classList.add('displayNone')
         saveInLocalStorage()
     }))
     const addEventEdit = () => btnEdit.forEach(el => el.addEventListener('click', element => {
