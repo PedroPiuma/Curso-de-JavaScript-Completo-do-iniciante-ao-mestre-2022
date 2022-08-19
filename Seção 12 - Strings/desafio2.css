@@ -27,7 +27,7 @@ body {
   min-height: 80px;
 }
 
-.paragraph button {
+.btn {
   position: absolute;
   display: none;
   right: 0;
@@ -43,6 +43,6 @@ body {
   position: relative;
 }
 
-.paragraph .btnLong {
+.btn.visible {
   display: block;
 }
