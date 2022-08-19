@@ -2,20 +2,24 @@ window.onload = () => {
     const dateTxt = document.querySelector('#date')
     const count = document.querySelector('#count')
     const date = dateTxt.innerHTML
-
-    const saveDateD = date.split(' ').shift().split('/')
-    const saveDateH = parseInt(date.split(' ').pop())
-    const aimDate = new Date(Number(saveDateD[2]), Number(saveDateD[1] - 1), Number(saveDateD[0]), saveDateH)
+    const [dd, mm, yyyy] = date.split(' ').shift().split('/')
+    const [h, m] = date.split(' ').pop().split('H')
+    const aimDate = new Date(yyyy, mm - 1, dd, h, m)
+    const oneDay = 24 * 60 * 60 * 1000
+    const oneHour = oneDay / 24
+    const oneMin = oneHour / 60
+    const oneSec = oneMin / 60
 
     const setTimer = () => {
         const dateNow = new Date()
-        const timeCounting = aimDate - dateNow
-        const oneDay = 24 * 60 * 60 * 1000
-        const day = timeCounting / oneDay
-        const hour = (day - parseInt(day)) * 60
-        const min = (hour - parseInt(hour)) * 60
-        const sec = (min - parseInt(min)) * 60
-
+        let timeCounting = aimDate - dateNow
+        const day = parseInt(timeCounting / oneDay)
+        timeCounting -= oneDay * day
+        const hour = parseInt(timeCounting / oneHour)
+        timeCounting -= hour * oneHour
+        const min = parseInt(timeCounting / oneMin)
+        timeCounting -= min * oneMin
+        const sec = parseInt(timeCounting / oneSec)
         count.innerHTML = `Faltam ${parseInt(day)} dia(s), ${parseInt(hour)} hora(s), ${parseInt(min)} minuto(s) e ${(sec)} segundo(s).`
     }
     setInterval(setTimer, 1000)
