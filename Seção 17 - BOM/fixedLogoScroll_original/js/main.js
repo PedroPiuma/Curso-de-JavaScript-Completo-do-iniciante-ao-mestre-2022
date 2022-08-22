@@ -3,7 +3,8 @@ window.onload = () => {
 
     window.addEventListener('scroll', (event) => {
         console.log(scrollY)
-        if (pageXOffset >= 200) body.classList.add('fx')
+        if (scrollY >= 200) body.classList.add('fx')
+        else body.classList.remove('fx')
     })
 
 }
