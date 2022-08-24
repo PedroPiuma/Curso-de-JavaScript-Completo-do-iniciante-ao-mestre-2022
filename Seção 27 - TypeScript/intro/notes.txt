@@ -1,0 +1,7 @@
+npm init :inicia projeto 
+npm install typescript -D :instala ts em dependecia de dev
+npx tsc index.ts : Transpila o ts em js
+npx tsc index.ts --watch : Transpila o ts em js em tempo real
+
+npm i ts-node : para poder rodar arquivos ts no node
+npx ts-code ./arquivo para rodar o arquivo com o ts-code
